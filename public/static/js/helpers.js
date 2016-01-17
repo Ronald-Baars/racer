@@ -12,10 +12,7 @@ Racer.helpers = {
                         if(Racer.ui.interfaces[ui].buttons[btn].enabled) Racer.ui.interfaces[ui].buttons[btn].onclick();
                     }
                 }
-
-                
             }
-           
         }
     }
 };
