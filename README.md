@@ -7,8 +7,16 @@ continue working on it when I've got more free time.
 ## How it works
 Wait for it...
 
-## Known bugs
-I've been working hard to get it where it is now, unfortunally there still are some bugs.
+## To do
+* Add objects to collide in
+* Design the menu
+* Make the finish count laps
+* Add checkpoints to prevent cheating
+* Add Collision detection
+  * Drive slow on grass
+  * Crash into solid objects (there arn't any now)
 
-* **You have to resize the browser when you chose a track**
-* 
+## Known bugs
+I've been working hard to get it where it is now, unfortunately there still are some bugs.
+
+* **You have to resize the browser when you choose a track** (it doesn't automatically redraw)
