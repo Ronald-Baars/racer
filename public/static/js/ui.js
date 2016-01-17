@@ -2,6 +2,8 @@ var Racer = Racer || {};
 
 Racer.ui = {
 
+	// All settings for the UI
+	
 	interfaces: {
 		menu: {
 			enabled: true,
@@ -61,23 +63,15 @@ Racer.ui = {
 
 	draw: function(ui) {
         var ctx = Racer.canvas.layer.preloader.context;
-        ctx.clearRect(0, 0, Racer.canvas.width, Racer.canvas.height);
-        
 
-
-
-        //Background
+        // Draw the background
         ctx.fillStyle = this.interfaces[ui].background;
         ctx.fillRect(0, 0, Racer.canvas.width, Racer.canvas.height);
         
-
-        
-
-        //Buttons
+        // Draw all buttons for the UI
         for(var btn in this.interfaces[ui].buttons) {
 
-			//console.log(this.interfaces[ui].buttons[btn]);
-
+			// Draw the buttons on the right position
 			if(this.interfaces[ui].buttons[btn].image && this.interfaces[ui].buttons[btn].enabled){
 			    ctx.drawImage(
 			    	Racer.assets[this.interfaces[ui].buttons[btn].image], 

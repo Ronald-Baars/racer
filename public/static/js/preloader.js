@@ -1,5 +1,6 @@
 var Racer = Racer || {};
 
+// The loaded files will be stored here
 Racer.assets = {
     json: {}
 };
@@ -7,6 +8,7 @@ Racer.assets = {
 
 Racer.preloader = {
 
+    // The files that will be loaded by the preloader
     url: {
         track1:         'static/json/tracks/track-1.json',
         track2:         'static/json/tracks/track-2.json',
@@ -20,6 +22,7 @@ Racer.preloader = {
         menu_startBtn:  'static/img/car.png'
     },
 
+    // The properties of the preloading animation
     ui: {
         background: {
             visible: true,
@@ -68,20 +71,28 @@ Racer.preloader = {
 
 
 
+    // Start loading
+    start: function() {
+        // Make sure this function can only be fired once
+        if(!this.loadingStarted) {
 
-    start: function() { 
-        if(!this.loadingStarted){
             this.loadingStarted = true;
             this.xobj = [];
 
+            // For each file
             for(var i in this.url) { 
 
+                // check if it's a JSON file
                 if(this.url[i].slice(-4) === "json") {
                     
                     this.xobj[i] = new XMLHttpRequest();
                     this.xobj[i].overrideMimeType("application/json");
                     this.xobj[i].open('GET', this.url[i], true);
                     this.xobj[i].name = i;
+
+                    // TODO: Declaring a function in a for-loop isn't right,
+                    //       but I didn't see another way (yet...)
+
                     this.xobj[i].onreadystatechange = (function (e) {
                         var file = e.currentTarget.name;
                         if (this.xobj[file].readyState == 4 && this.xobj[file].status == "200") {
@@ -89,6 +100,7 @@ Racer.preloader = {
                             this.fileFinished(file);
                         }
                     }.bind(this));
+                    
                     this.xobj[i].send(null);
                     this.currentFile++;
 
@@ -115,7 +127,8 @@ Racer.preloader = {
 
             // all images are loaded
             this.preloadComplete = true;
-            Racer.canvas.preloaded();
+            console.log("loading complete");
+            Racer.controls.init();
         }
     },
 
@@ -125,7 +138,7 @@ Racer.preloader = {
 
 
     animationFrameHandler: function() {
-        if(this.currentAnimationFrame == 0) {
+        if(this.currentAnimationFrame === 0) {
             //first frame
 
             //style objects

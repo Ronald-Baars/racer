@@ -2,11 +2,11 @@ var Racer = Racer || {};
 
 Racer.onEnterFrame = function() {
 
-    // Clear the canvas
+    // Clear the canvasses
     Racer.canvas.layer.track.context.clearRect(0, 0, Racer.canvas.width, Racer.canvas.height);
     Racer.canvas.layer.car.context.clearRect(0, 0, Racer.canvas.width, Racer.canvas.height);
 
-        
+    // Check on which route we are currently
     switch(Racer.route) {
         
 
@@ -37,6 +37,6 @@ Racer.onEnterFrame = function() {
     }
 
 
-
+    // Loop this function for each frame
     window.requestAnimationFrame(Racer.onEnterFrame);
 };
