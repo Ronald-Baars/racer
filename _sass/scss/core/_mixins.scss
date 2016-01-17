@@ -1,0 +1,22 @@
+@mixin text-rendering {
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-khtml-font-smoothing: antialiased;
+	-apple-font-smoothing: antialiased;
+	font-smooth: always;
+	text-rendering: optimizelegibility;
+}
+@mixin unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+@mixin gpu-rendering {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0); 
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

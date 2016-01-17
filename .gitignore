@@ -1,0 +1,5 @@
+# Excluded folders
+_DESIGN/
+
+# Excluded files
+.DS_Store
