@@ -10,7 +10,7 @@ continue working on it when I've got more free time.
 It's a simple racing game with the posibility to add or change tracks in a 
 very simple way (just take a look at [one of the track files][11]).
 
-You can drive around with the arrow keys,
+You can drive around with the arrow keys.
 
 ## What the files do
 For a detailed description, please click the links:
