@@ -3,8 +3,14 @@ Hi, Thanks for checking out this experimental Racing game. The past few weeks
 I've been working on making it as best as I could in the time I had, I'll
 continue working on it when I've got more free time.
 
-## What it does
+**NOTE: After you select a track, you have to resize the browser for it to show** 
+(I can't find the solution for this bug...)
 
+## What it does
+It's a simple racing game with the posibility to add or change tracks in a 
+very simple way (just take a look at [one of the track files][11]).
+
+You can drive around with the arrow keys,
 
 ## What the files do
 For a detailed description, please click the links:
@@ -26,20 +32,16 @@ For a detailed description, please click the links:
 ## To do
 * Make the finish count laps
   * Add checkpoints to prevent cheating
-
 * Add objects to collide in
-
+* Add tire tracks when the car is braking or drifting
 * Add W, S, A and D as 2nd controls to drive the car
-
-* The router shouldn't be in [draw.js][3]
-
+* The router shouldn't be in [draw.js][3], should be merged with router.js
 * change [settings.js][10] into a json file
-
 * Design and implement the menu
-
 * Add Collision detection
   * Drive slow on grass
   * Crash into solid objects ➞ *there arn't any yet*
+* In [preloader.js][2], a function is declared in a for-loop
 
 ## Known bugs
 I've been working hard to get it where it is now, unfortunately there still are some bugs.
@@ -56,3 +58,5 @@ I've been working hard to get it where it is now, unfortunately there still are 
 [8]:  https://github.com/Ronald-Baars/racer/blob/develop/public/static/js/ui.js
 [9]:  https://github.com/Ronald-Baars/racer/blob/develop/public/static/js/helpers.js
 [10]: https://github.com/Ronald-Baars/racer/blob/develop/public/static/js/helpers.js
+
+[11]: https://github.com/Ronald-Baars/racer/tree/develop/public/static/json/tracks

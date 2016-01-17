@@ -1,6 +1,8 @@
 var Racer = Racer || {};
 
 Racer.canvas = {
+
+    // Use multiple canvasses for layers
     layer: {
         preloader: {
             el: document.getElementById('canvas_preloader'),
@@ -18,31 +20,27 @@ Racer.canvas = {
             el: document.getElementById('canvas_car'),
             context: canvas_car.getContext('2d'),
         },
-
     },
 
-
+    // This will be filled in later on
     width: 0,
     height: 0,
     
-
+    // The function that starts it all up
     init: function () {
+        // Fire the resize function to set the size of the canvas
         this.handleResize();
-        this.setupEventListeners();
-        
-        Racer.onEnterFrame();
-    },
 
-    preloaded: function () {
-        console.log("loading complete");
-        Racer.controls.init();
-        Racer.track.init(Racer.settings.track);
+        // Set up the eventlisteners
+        this.setupEventListeners();
+
+        // Start the drawing function
+        Racer.onEnterFrame();
     },
 
     setupEventListeners: function () {
         window.addEventListener('resize', this.handleResize.bind(this), false);
         window.addEventListener('click', Racer.helpers.clickHandler, false);
-
     },
 
     handleResize: function() {

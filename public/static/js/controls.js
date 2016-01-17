@@ -2,14 +2,14 @@ var Racer = Racer || {};
 
 Racer.controls = {
 
-    init: function () {
-        this.keyboard = [];
+    // The array where every key is stored
+    keyboard: [],
 
+
+    init: function () {
         // Setup the eventlisteners
         this.setupEventListeners();
-
         this.handleKeyboard();
-
     },
 
     setupEventListeners: function () {

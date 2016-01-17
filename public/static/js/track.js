@@ -10,6 +10,10 @@ Racer.track = {
 		posY: 0
 	},
 
+	// The tracks are being drawn by ascii characters, (For an example: 
+	// take a look at a track file in the json directory). The array below
+	// is in the exact order and placing on which the blocks are in the tile-sheet
+	// (take a look at track.png)
 	blocks: [
 		["╔","╗","═","║"],
 		["╚","╝","╦","╣"],
@@ -24,21 +28,25 @@ Racer.track = {
 
 	imageLoaded: false,
 
-	init: function(id) {
-
-	},
-
+	// This function checks the track json and places the blocks in the right position
 	buildMap: function(id) {
+
 		// Each row in the array
 		for (var row in Racer.assets.json[id].map) {
+
 			var str = Racer.assets.json[id].map[row];
+
 			// Each character in the string
 			for (var i = 0; i < str.length; i++) {
+				// get the current character
 				var c = str.charAt(i);
+
+				// get the right tile
 				var block = Racer.track.getBlockID(c);
+				
+				//check if the block is the finish
 				if(block[2] === true && Racer.car.config.movedToStart === false) {
-					// This block is the finish
-					
+					// if it is, move the car to the start position
 					Racer.car.moveToStart(
 						i*Racer.track.config.blockWidth,
 						(parseInt(row)*Racer.track.config.blockHeight) + Racer.track.config.blockHeight/2
@@ -46,15 +54,18 @@ Racer.track = {
 
 				}
 
+				// Draw the block
 				Racer.track.draw([i, parseInt(row)], block);
 			}
 		}
 	},
 
+	// This function returns the right tile for the character given
 	getBlockID: function(symbol) {
 		var x, y, finish=false;
 		// Search for the right block ID
 		for (y = 0; y < this.blocks.length; y++) {
+			
 			x = this.blocks[y].indexOf(symbol);
 			if(x !== -1) {
 				if(y == 3) finish = true;
