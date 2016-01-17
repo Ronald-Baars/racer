@@ -14,7 +14,7 @@ Racer.preloader = {
         track2:         'static/json/tracks/track-2.json',
         track3:         'static/json/tracks/track-3.json',
 
-        track:          'static/img/track.gif',
+        track:          'static/img/track.png',
         car:            'static/img/car.png',
         tiretracks:     'static/img/tiretracks.png',
         shadow:         'static/img/car_shadow.png',
