@@ -9,7 +9,6 @@ continue working on it when I've got more free time.
 ## What it does
 It's a simple racing game with the posibility to add or change tracks in a 
 very simple way (just take a look at [one of the track files][11]).
-
 You can drive around with the arrow keys.
 
 ## What the files do
@@ -32,6 +31,7 @@ For a detailed description, please click the links:
 ## To do
 * Make the finish count laps
   * Add checkpoints to prevent cheating
+* Add grass where there is no map
 * Add objects to collide in
 * Add tire tracks when the car is braking or drifting
 * Add W, S, A and D as 2nd controls to drive the car
