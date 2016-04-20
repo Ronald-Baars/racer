@@ -8,7 +8,7 @@ Racer.onEnterFrame = function() {
 
     // Check on which route we are currently
     switch(Racer.route) {
-        
+
 
         case "preloader":
             if(!Racer.preloader.hidden) Racer.preloader.draw();
@@ -26,8 +26,8 @@ Racer.onEnterFrame = function() {
 
         case "race":
             // Build the map
-            Racer.track.buildMap(Racer.settings.track);
-            
+            Racer.track.buildMap(Racer.track.id);
+
             // Draw the car
             Racer.car.draw();
 

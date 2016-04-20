@@ -18,8 +18,10 @@ Racer.preloader = {
         car:            'static/img/car.png',
         tiretracks:     'static/img/tiretracks.png',
         shadow:         'static/img/car_shadow.png',
-        
-        menu_startBtn:  'static/img/car.png'
+
+        menu_startBtn1:  'static/img/track-1.png',
+        menu_startBtn2:  'static/img/track-2.png',
+        menu_startBtn3:  'static/img/track-3.png'
     },
 
     // The properties of the preloading animation
@@ -80,11 +82,11 @@ Racer.preloader = {
             this.xobj = [];
 
             // For each file
-            for(var i in this.url) { 
+            for(var i in this.url) {
 
                 // check if it's a JSON file
                 if(this.url[i].slice(-4) === "json") {
-                    
+
                     this.xobj[i] = new XMLHttpRequest();
                     this.xobj[i].overrideMimeType("application/json");
                     this.xobj[i].open('GET', this.url[i], true);
@@ -100,7 +102,7 @@ Racer.preloader = {
                             this.fileFinished(file);
                         }
                     }.bind(this));
-                    
+
                     this.xobj[i].send(null);
                     this.currentFile++;
 
@@ -120,7 +122,7 @@ Racer.preloader = {
 
 
     fileFinished: function (file) {
-        
+
         this.currentFile--;
 
         if(this.currentFile <= 0) {
@@ -144,7 +146,7 @@ Racer.preloader = {
             //style objects
             this.ui.lineLeft.x = (Racer.canvas.width/2)-220;
             this.ui.lineLeft.y = Racer.canvas.height/2;
-            
+
             this.ui.lineRight.x = (Racer.canvas.width/2)+220;
             this.ui.lineRight.y = Racer.canvas.height/2;
 
@@ -169,7 +171,7 @@ Racer.preloader = {
             this.ui.logo.y = (Racer.canvas.height/2);
             this.ui.logo.color = 'rgba(255,255,255, ' + (1-((50-this.currentAnimationFrame)/50)) + ')';
 
-            
+
 
             //Go to next frame
             this.currentAnimationFrame++;
@@ -191,9 +193,9 @@ Racer.preloader = {
             //style objects
             this.ui.progressBar.x = Racer.canvas.width/2;
             this.ui.progressBar.y = Racer.canvas.height/2;
-            
+
             if(this.ui.progressBar.width < animationTarget) this.ui.progressBar.width += (animationTarget - this.ui.progressBar.width)/10;
-            
+
             if(this.ui.progressBar.width >= 400 && this.preloadComplete === true) {
                 this.currentAnimationFrame++;
             }
@@ -206,7 +208,7 @@ Racer.preloader = {
             //Declare variables
             var currentFrame = this.currentAnimationFrame-100;
 
-            
+
 
             //show/hide objects
             this.ui.logo.visible = false;
@@ -243,7 +245,7 @@ Racer.preloader = {
         this.animationFrameHandler();
         var ctx = Racer.canvas.layer.preloader.context;
         ctx.clearRect(0, 0, Racer.canvas.width, Racer.canvas.height);
-        
+
 
         //gray background
         if(this.ui.background.visible === true) {
@@ -261,12 +263,12 @@ Racer.preloader = {
             ctx.fillText('Circuit', this.ui.logo.x+30, this.ui.logo.y+30 - (this.ui.logo.lineHeight/2));
             ctx.fillText('Racer', this.ui.logo.x-70, this.ui.logo.y+30 + (this.ui.logo.lineHeight/2));
         }
-        
+
 
 
         //progress bar
         if(this.ui.progressBar.visible === true) {
-            
+
             ctx.beginPath();
 
             var center = this.ui.progressBar.x - (this.ui.progressBar.width/2)-45;
