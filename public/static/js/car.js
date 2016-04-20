@@ -4,7 +4,7 @@ Racer.car = {
 
 	config: {
 		// Maximum speed
-		max: 50,
+		max: Racer.settings.maximum_speed,
 
 		// Size of the car
 		width: 70,
@@ -58,13 +58,13 @@ Racer.car = {
 		// Calculate the new direction
 		this.config.direction += this.steer();
 	},
-	
+
 	steerLeft: function() {
 		// Calculate the new direction
 		this.config.direction -= this.steer();
 	},
-	
-	
+
+
 	// Draw
 	draw: function() {
 		// set the Context
@@ -126,7 +126,7 @@ Racer.car = {
 
 			// Rotate the car
 			ctx.rotate(direction);
-			
+
 			// Put it back to the original position
 		    ctx.translate(-offsetX,-offsetY);
 

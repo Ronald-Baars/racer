@@ -22,10 +22,6 @@ Racer.canvas = {
         },
     },
 
-    // This will be filled in later on
-    width: 0,
-    height: 0,
-    
     // The function that starts it all up
     init: function () {
         // Fire the resize function to set the size of the canvas

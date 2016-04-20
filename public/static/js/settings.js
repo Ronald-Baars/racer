@@ -1,5 +1,5 @@
 var Racer = Racer || {};
 
 Racer.settings = {
-	track: "track1"
+	maximum_speed: 50
 };

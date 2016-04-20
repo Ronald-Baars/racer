@@ -6,10 +6,12 @@ continue working on it when I've got more free time.
 **NOTE: After you select a track, you have to resize the browser for it to show** 
 (I can't find the solution for this bug...)
 
+
 ## What it does
 It's a simple racing game with the posibility to add or change tracks in a 
 very simple way (just take a look at [one of the track files][11]).
 You can drive around with the arrow keys.
+
 
 ## What the files do
 For a detailed description, please click the links:
@@ -36,12 +38,14 @@ For a detailed description, please click the links:
 * Add tire tracks when the car is braking or drifting
 * Add W, S, A and D as 2nd controls to drive the car
 * The router shouldn't be in [draw.js][3], should be merged with router.js
+* Add a favicon
 * change [settings.js][10] into a json file
 * Design and implement the menu
 * Add Collision detection
   * Drive slow on grass
   * Crash into solid objects ➞ *there arn't any yet*
 * In [preloader.js][2], a function is declared in a for-loop
+
 
 ## Known bugs
 I've been working hard to get it where it is now, unfortunately there still are some bugs.
